@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>AWS Amplify Test</h1>
-      <Stopwatch/>
+      <Stopwatch message="1"/>
     </div>
   );
 }

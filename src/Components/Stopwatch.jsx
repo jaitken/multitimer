@@ -1,9 +1,10 @@
 import React from 'react';
 
 class Stopwatch extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
+            name: "Stopwatch "+ this.props.message,
             time: 0,
             isOn: false,
             start: 0
@@ -11,6 +12,17 @@ class Stopwatch extends React.Component{
         this.startTimer = this.startTimer.bind(this)
         this.stopTimer = this.stopTimer.bind(this)
         this.resetTimer = this.resetTimer.bind(this)
+        this.handleInput = this.handleInput.bind(this)
+    }
+
+
+    handleInput(event){
+        this.setState({name:event.target.value})
+    }
+
+    handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
     }
 
     startTimer() {
@@ -45,15 +57,20 @@ class Stopwatch extends React.Component{
         let reset = (this.state.time === 0 || this.state.isOn) ? null : <button onClick={this.resetTimer}>reset</button>
     
         let seconds = (this.state.time/1000%60).toFixed(2);
-        let mins = Math.floor(this.state.time/1000/60)
+        let mins = Math.floor(this.state.time/1000/60);
         
         return(
           <div>
+          <h3>{this.state.name}</h3>
           <h1>{mins}:{seconds}</h1>
           {start}
           {resume}
           {stop}
           {reset}
+          <form onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.name} onChange={this.handleInput} />
+                <input type="submit" value="Submit"/>
+            </form>
         </div>
       )
     }
