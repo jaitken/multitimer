@@ -69,7 +69,6 @@ class Stopwatch extends React.Component{
           {reset}
           <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.name} onChange={this.handleInput} />
-                <input type="submit" value="Submit"/>
             </form>
         </div>
       )
