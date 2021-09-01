@@ -20,3 +20,31 @@
     text-align:center;
     font-size: 25px;
 }
+
+#timerContainer{
+    position: relative; /* for absolute child element */
+}
+
+.buttonContainer{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.resetButton{
+    background-color: #333;
+    border-color: white;
+    color:white;
+    padding: 5px;
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 20px;
+}
+
+.resetButton:hover{
+    background-color: #444;
+    cursor: pointer;
+}

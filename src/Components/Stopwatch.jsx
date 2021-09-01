@@ -49,13 +49,20 @@ class Stopwatch extends React.Component{
 
 
     render(){
+        /*
         let start = (this.state.time === 0) ? <button onClick={this.startTimer}>start</button> : null
-    
+
         let stop = (this.state.time === 0 || !this.state.isOn) ? null : <button onClick={this.stopTimer}>stop</button>
-      
+
         let resume = (this.state.time === 0 || this.state.isOn) ? null : <button onClick={this.startTimer}>resume</button>
+        */ 
+        let start = (this.state.time === 0) ? <div className='buttonContainer' onClick={this.startTimer}></div> : null
+
+        let stop = (this.state.time === 0 || !this.state.isOn) ? null : <div className='buttonContainer' onClick={this.stopTimer}></div>
       
-        let reset = (this.state.time === 0 || this.state.isOn) ? null : <button onClick={this.resetTimer}>reset</button>
+        let resume = (this.state.time === 0 || this.state.isOn) ? null : <div className='buttonContainer' onClick={this.startTimer}></div>
+      
+        let reset = (this.state.time === 0 || this.state.isOn) ? null : <button className='resetButton' onClick={this.resetTimer}>Reset</button>
     
         let seconds = (this.state.time/1000%60).toFixed(2);
         let mins = Math.floor(this.state.time/1000/60);
@@ -66,11 +73,14 @@ class Stopwatch extends React.Component{
             <div id="nameInputContainer">
                 <input id="nameInput" type="text" value={this.state.name} onChange={this.handleInput} />
             </div>
-          <h1>{mins}:{seconds}</h1>
-          {start}
-          {resume}
-          {stop}
-          {reset}
+            <div id='timerContainer'>
+                <h1>{mins}:{seconds}</h1>
+                {start}
+                {stop}
+                {resume}
+            </div>
+            {reset}
+
          
         </div>
       )
