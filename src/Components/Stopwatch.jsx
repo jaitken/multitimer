@@ -1,4 +1,5 @@
 import React from 'react';
+import './StopwatchStyle.css'
 
 class Stopwatch extends React.Component{
     constructor(props){
@@ -59,17 +60,18 @@ class Stopwatch extends React.Component{
         let seconds = (this.state.time/1000%60).toFixed(2);
         let mins = Math.floor(this.state.time/1000/60);
         
-        return(
-          <div>
-          <h3>{this.state.name}</h3>
+        
+    return(
+        <div id='stopwatchContainer'>
+            <div id="nameInputContainer">
+                <input id="nameInput" type="text" value={this.state.name} onChange={this.handleInput} />
+            </div>
           <h1>{mins}:{seconds}</h1>
           {start}
           {resume}
           {stop}
           {reset}
-          <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.name} onChange={this.handleInput} />
-            </form>
+         
         </div>
       )
     }

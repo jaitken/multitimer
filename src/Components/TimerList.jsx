@@ -1,6 +1,8 @@
 import React from 'react';
 import Stopwatch from './Stopwatch';
 
+import './TimerListStyle.css'
+
 class TimerList extends React.Component{
     
     constructor(props) {
@@ -23,13 +25,13 @@ class TimerList extends React.Component{
     
     render(){
           return(
-            <div  style={{ textAlign: 'center'}}>
-                <ul style={{ listStyle: 'none'}}>
+            <div id='timerListContainer'>
+                <ul id="list">
                 {this.state.Timers.map(item => (
-                        <li key={item.key} >{item}</li>
+                        <li id='listItem' key={item.key} >{item}</li>
                     ))}
                 </ul>
-                <button onClick={this.handleClick}>Add</button>
+                <button id='addButton' onClick={this.handleClick}>+</button>
             </div>
           );
       }

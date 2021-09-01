@@ -1,0 +1,38 @@
+
+#timerListContainer{
+    text-align: center; 
+    margin: auto;
+    width: 350px;
+
+}
+
+#list{
+    padding: 0;
+    list-style-type: none;
+}
+
+#listItem{
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+#addButton{
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-color: white;
+    color:white;
+    float: left;
+    margin-left: 10px;
+
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+
+    font-size: 30px;
+}
+
+#addButton:hover{
+    background-color: #444;
+    cursor: pointer;
+}
